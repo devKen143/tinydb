@@ -1,0 +1,19 @@
+[package]
+name = "tinydb"
+version = "0.1.0"
+edition = "2021"
+description = "A small relational database engine: paged storage, B+tree, rollback journal, SQL parser and executor"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "tinydb"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = "s"
+lto = true
